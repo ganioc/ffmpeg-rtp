@@ -19,13 +19,18 @@ add_executable(rtpp ${_SOURCES} ${_SUB_SOURCES})
 
 find_path(AVCODEC_INCLUDE_DIR libavcodec/avcodec.h )
 find_path(AVFORMAT_INCLUDE_DIR libavformat/avformat.h )
+find_path(SWSCALE_INCLUDE_DIR libswscale/swscale.h)
+
 find_library(AVCODEC_LIBRARY avcodec )
 find_library(AVFORMAT_LIBRARY avformat )
+find_library(SWSCALE_LIBRARY swscale)
 
 target_include_directories( rtpp PRIVATE ${AVCODEC_INCLUDE_DIR} 
-    ${AVFORMAT_INCLUDE_DIR})
+    ${AVFORMAT_INCLUDE_DIR}
+    ${SWSCALE_INCLUDE_DIR})
 target_link_libraries( rtpp PRIVATE ${AVCODEC_LIBRARY}
-    ${AVFORMAT_LIBRARY})
+    ${AVFORMAT_LIBRARY}
+    ${SWSCALE_LIBRARY})
 
 #target_link_directories(rtpp PkgConfig::ffmpeg)
 

@@ -2,8 +2,12 @@
 CMake
 
 
-### use mmpeg
+### use ffmpeg
+receive frames with rtsp , ffmpeg,
 
 
-### use gstream
+
+### use gstreamer
+
+
 
